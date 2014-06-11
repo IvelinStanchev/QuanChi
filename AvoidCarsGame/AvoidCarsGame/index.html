@@ -2,10 +2,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>AvoidCarsGame</title>
+    <style>
+        #svg{
+            position: absolute;
+        }
+        #svg image{
+            position: absolute;
+        }
+        #field{
+            position:absolute;
+        }
+    </style>
 </head>
 <body>
-    <script>
+    <svg xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="600" id="svg">
+        <image x="300" y="-10" width="600" height="600" xlink:href="images/Road.png">
+        </image>
+    </svg>
 
-    </script>
+    <canvas id="field" width="900" height="600"></canvas>
+
+    <script src="scripts/AvoidCarsGame.js"></script>
 </body>
 </html>
