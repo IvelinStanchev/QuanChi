@@ -46,7 +46,7 @@
             controls.innerText = 'Left arrow - move car to the left\n Right arrow - move car to the right';
             divButtons.appendChild(controls);
         })
-
+        //Clear the controls message, but doesn't work well
         controlsBtn.addEventListener('mouseout', function () {
             controls.parentNode.removeChild(controls);
 
