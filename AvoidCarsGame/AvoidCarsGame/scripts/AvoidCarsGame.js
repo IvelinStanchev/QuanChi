@@ -5,39 +5,39 @@
     var quitBtn;
     var controls;
     var divButtons;
+    var playerPoints;
     var isBtnsDraw = false;
+    var isGameOver = false;
 
     function StartMenu() {
 
-        if (isBtnsDraw===false) {
-             frag = document.createDocumentFragment();
-             startBtn = document.createElement('button');
-             controlsBtn = document.createElement('button');
-             quitBtn = document.createElement('button');
-             startBtn.innerText = 'Start Game';
-             controlsBtn.innerText = 'Controls';
-             quitBtn.innerText = 'Quit Game';
+        if (isBtnsDraw === false) {
+            frag = document.createDocumentFragment();
+            startBtn = document.createElement('button');
+            controlsBtn = document.createElement('button');
+            quitBtn = document.createElement('button');
+            startBtn.innerText = 'Start Game';
+            controlsBtn.innerText = 'Controls';
+            quitBtn.innerText = 'Quit Game';
 
-             frag.appendChild(startBtn);
-             frag.appendChild(controlsBtn);
-             frag.appendChild(quitBtn);
+            frag.appendChild(startBtn);
+            frag.appendChild(controlsBtn);
+            frag.appendChild(quitBtn);
 
-             divButtons = document.getElementById('btn-container');
-             divButtons.appendChild(frag);
-             isBtnsDraw = true;
+            divButtons = document.getElementById('btn-container');
+            divButtons.appendChild(frag);
+            isBtnsDraw = true;
         }
         else {
             startBtn.style.visibility = 'visible';
             controlsBtn.style.visibility = 'visible';
-            quitBtn.style.visibility = 'visible';
 
         }
-               
+
         startBtn.addEventListener('click', function () {
             startBtn.style.visibility = 'hidden';
             controlsBtn.style.visibility = 'hidden';
-            quitBtn.style.visibility = 'hidden';
-
+            isGameOver = false;
             Game();
         })
 
@@ -48,8 +48,14 @@
         })
 
         controlsBtn.addEventListener('mouseout', function () {
-                controls.parentNode.removeChild(controls);
-          
+            controls.parentNode.removeChild(controls);
+
+        })
+
+        quitBtn.addEventListener('click', function () {
+            isGameOver = true;
+            alert("Player Points:" + playerPoints);
+            StartMenu();
         })
     }
 
@@ -60,7 +66,7 @@
         var ctx = canvas.getContext("2d");
 
         var pointsDiv = document.getElementById("points");
-
+        playerPoints = 0;
         var myCarImage = new Image();
         myCarImage.src = 'images/car.png';
         var obstacleCarImage = new Image();
@@ -79,8 +85,8 @@
         var centerPosition = ((fieldMaxPositionX + fieldMinPositionX) / 2) - 35;
         var fieldPositionY = canvas.height;
         var mainCarDirection = "center";
-        var playerPoints = 0;
-        var isGameOver = false;
+        
+
 
         var myCar = new MainCar(centerPosition, canvas.height - 140, myCarImage, mainCarDirection);
         var obstacleCar = new ObstacleCar(centerPosition, minCanvasHeight - 128, obstacleCarImage, "center");
@@ -110,6 +116,10 @@
                 updateObstacleCarY += 0.005;
             }
 
+            endGame();
+        }
+
+        function endGame() {
             if (!isGameOver) {
                 pointsDiv.innerText = "Points: " + playerPoints;
             } else {
