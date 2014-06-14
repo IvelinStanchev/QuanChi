@@ -9,15 +9,18 @@
 #field {
     position: absolute;
 }
-
+#btn-container{
+    display:inline-block;
+    position:relative;
+}
 button{
     position:relative;
-    left:495px;
+
     display:block;
     margin-bottom:20px;
-    top:250px;
     width:200px;
     height:50px;
+    font-size:20px;
 }
 
 
