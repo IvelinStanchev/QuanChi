@@ -28,3 +28,9 @@ C:\Users\Administrator\Source\Repos\QuanChi3\AvoidCarsGame\AvoidCarsGame\bin\Avo
 C:\Users\Administrator\Source\Repos\QuanChi3\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Source\Repos\QuanChi3\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.dll
 C:\Users\Administrator\Source\Repos\QuanChi3\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.pdb
+C:\Users\Ani\Desktop\GitHub\QuanChi2\AvoidCarsGame\AvoidCarsGame\bin\AvoidCarsGame.dll.config
+C:\Users\Ani\Desktop\GitHub\QuanChi2\AvoidCarsGame\AvoidCarsGame\bin\AvoidCarsGame.dll
+C:\Users\Ani\Desktop\GitHub\QuanChi2\AvoidCarsGame\AvoidCarsGame\bin\AvoidCarsGame.pdb
+C:\Users\Ani\Desktop\GitHub\QuanChi2\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.csprojResolveAssemblyReference.cache
+C:\Users\Ani\Desktop\GitHub\QuanChi2\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.dll
+C:\Users\Ani\Desktop\GitHub\QuanChi2\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.pdb

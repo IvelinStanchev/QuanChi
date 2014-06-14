@@ -1,18 +1,13 @@
 ﻿window.onload = function () {
 
-    function StartMenu() {
-        //var buttons = document.querySelectorAll('button');
+    function StartMenu(){
 
         var frag = document.createDocumentFragment();
         var startBtn = document.createElement('button');
         var controlsBtn = document.createElement('button');
         var quitBtn = document.createElement('button');
-
-        // move this to another func
-        //var div = document.getElementById('points');
-        //div.innerText = '';
-        // till this
-
+        var controls;
+        
         startBtn.innerText = 'Start Game';
         controlsBtn.innerText = 'Controls';
         quitBtn.innerText = 'Quit Game';
@@ -20,8 +15,6 @@
         frag.appendChild(startBtn);
         frag.appendChild(controlsBtn);
         frag.appendChild(quitBtn);
-
-
 
         var divButtons = document.getElementById('btn-container');
         divButtons.appendChild(frag);
@@ -34,6 +27,16 @@
             quitBtn.parentNode.removeChild(quitBtn);
 
             Game();
+        })
+
+        controlsBtn.addEventListener('click', function () {
+            controls = document.createElement('div');
+            controls.innerText = 'Left arrow - move car to the left\n Right arrow - move car to the right';
+            divButtons.appendChild(controls);
+        })
+
+        controlsBtn.addEventListener('mouseout', function () {
+            controls.parentNode.removeChild(controls);
         })
     }
 
