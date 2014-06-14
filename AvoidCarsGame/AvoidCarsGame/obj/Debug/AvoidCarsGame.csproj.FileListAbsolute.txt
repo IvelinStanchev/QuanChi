@@ -10,3 +10,9 @@ C:\Users\Administrator\Source\Repos\QuanChi\AvoidCarsGame\AvoidCarsGame\bin\Avoi
 C:\Users\Administrator\Source\Repos\QuanChi\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Source\Repos\QuanChi\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.dll
 C:\Users\Administrator\Source\Repos\QuanChi\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.pdb
+C:\Users\Ani\Desktop\GitHub\QuanChi\AvoidCarsGame\AvoidCarsGame\bin\AvoidCarsGame.dll.config
+C:\Users\Ani\Desktop\GitHub\QuanChi\AvoidCarsGame\AvoidCarsGame\bin\AvoidCarsGame.dll
+C:\Users\Ani\Desktop\GitHub\QuanChi\AvoidCarsGame\AvoidCarsGame\bin\AvoidCarsGame.pdb
+C:\Users\Ani\Desktop\GitHub\QuanChi\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.csprojResolveAssemblyReference.cache
+C:\Users\Ani\Desktop\GitHub\QuanChi\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.dll
+C:\Users\Ani\Desktop\GitHub\QuanChi\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.pdb
