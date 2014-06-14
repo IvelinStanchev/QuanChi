@@ -4,3 +4,9 @@ E:\Telerik\TeamWorks\JavaScriptUI&DOMWork\Project\AvoidCarsGame\AvoidCarsGame\bi
 E:\Telerik\TeamWorks\JavaScriptUI&DOMWork\Project\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.csprojResolveAssemblyReference.cache
 E:\Telerik\TeamWorks\JavaScriptUI&DOMWork\Project\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.dll
 E:\Telerik\TeamWorks\JavaScriptUI&DOMWork\Project\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.pdb
+C:\Users\Administrator\Source\Repos\QuanChi\AvoidCarsGame\AvoidCarsGame\bin\AvoidCarsGame.dll.config
+C:\Users\Administrator\Source\Repos\QuanChi\AvoidCarsGame\AvoidCarsGame\bin\AvoidCarsGame.dll
+C:\Users\Administrator\Source\Repos\QuanChi\AvoidCarsGame\AvoidCarsGame\bin\AvoidCarsGame.pdb
+C:\Users\Administrator\Source\Repos\QuanChi\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Source\Repos\QuanChi\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.dll
+C:\Users\Administrator\Source\Repos\QuanChi\AvoidCarsGame\AvoidCarsGame\obj\Debug\AvoidCarsGame.pdb
