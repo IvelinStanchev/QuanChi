@@ -11,7 +11,8 @@
 }
 #btn-container{
     display:inline-block;
-    position:relative;
+    position:absolute;
+    z-index:100;
 }
 button{
     position:relative;
