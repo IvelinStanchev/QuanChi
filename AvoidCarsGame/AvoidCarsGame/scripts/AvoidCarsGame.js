@@ -2,17 +2,18 @@
 
     function StartMenu() {
         var buttons = document.querySelectorAll('button');
-        
+
         buttons[0].addEventListener('click', function () {
-            for (var i = 0, len=buttons.length; i <len ; i++) {
+            for (var i = 0, len = buttons.length; i < len ; i++) {
                 buttons[i].parentNode.removeChild(buttons[i]);
             }
-            
+
             Game();
         })
     }
 
     StartMenu();
+
     function Game() {
         var canvas = document.getElementById("field");
         var ctx = canvas.getContext("2d");
@@ -161,6 +162,7 @@
         }
 
         document.onkeydown = checkKey;
+
         function checkKey(e) {
             e = e || window.event;
 
