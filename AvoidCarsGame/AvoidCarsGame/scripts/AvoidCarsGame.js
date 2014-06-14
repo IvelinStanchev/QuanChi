@@ -148,7 +148,7 @@
     function checkKey(e) {
         e = e || window.event;
 
-        if (e.keyCode === '40') {
+        if (e.keyCode == '40') {
             //brake
             if (updateObstacleCarY > 1) {
                 updateObstacleCarY -= 0.5;
@@ -157,14 +157,14 @@
             if (playerPoints >= 15) {
                 playerPoints -= 15;
             }
-        } else if (e.keyCode === '39') {
+        } else if (e.keyCode == '39') {
             if (mainCarDirection === "center") {
                 mainCarDirection = 'right';
             }
             if (mainCarDirection === "left") {
                 mainCarDirection = 'center';
             }
-        } else if (e.keyCode === '37') {
+        } else if (e.keyCode == '37') {
             if (mainCarDirection === "center") {
                 mainCarDirection = 'left';
             }
