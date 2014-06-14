@@ -39,6 +39,7 @@
         var fieldPositionY = canvas.height;
         var mainCarDirection = "center";
         var playerPoints = 0;
+        var isGameOver = false;
 
         var myCar = new MainCar(centerPosition, canvas.height - 140, myCarImage, mainCarDirection);
         var obstacleCar = new ObstacleCar(centerPosition, minCanvasHeight - 128, obstacleCarImage, "center");
@@ -70,7 +71,9 @@
 
             pointsDiv.innerHTML = playerPoints;
 
-            requestAnimationFrame(drawingObjects);
+            if (!isGameOver) {
+                requestAnimationFrame(drawingObjects);
+            }
         }
 
         function ObstacleCar(x, y, image, line) {
@@ -155,10 +158,16 @@
             for (var i = 0, len = obstacleCars.length; i < len; i++) {
                 if ((obstacleCars[i].backBumperY > myCar.frontBumperY) && (obstacleCars[i].frontBumperY + 10 < myCar.backBumperY)) {
                     if (obstacleCars[i].line == myCar.line) {
+                        isGameOver = true;
+                        printResults();
                         alert("Game Over! Points: " + playerPoints);
                     }
                 }
             }
+        }
+
+        function printResults() {
+            //TODO
         }
 
         document.onkeydown = checkKey;
