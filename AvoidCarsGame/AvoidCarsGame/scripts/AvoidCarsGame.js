@@ -1,9 +1,13 @@
 ﻿window.onload = function () {
 
     function StartMenu() {
-        var startBtn = document.getElementById('startBtn');
-
-        startBtn.addEventListener('click', function () {
+        var buttons = document.querySelectorAll('button');
+        
+        buttons[0].addEventListener('click', function () {
+            for (var i = 0, len=buttons.length; i <len ; i++) {
+                buttons[i].parentNode.removeChild(buttons[i]);
+            }
+            
             Game();
         })
     }
