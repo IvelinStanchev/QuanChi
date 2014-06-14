@@ -1,12 +1,37 @@
 ﻿window.onload = function () {
 
     function StartMenu() {
-        var buttons = document.querySelectorAll('button');
+        //var buttons = document.querySelectorAll('button');
 
-        buttons[0].addEventListener('click', function () {
-            for (var i = 0, len = buttons.length; i < len ; i++) {
-                buttons[i].parentNode.removeChild(buttons[i]);
-            }
+        var frag = document.createDocumentFragment();
+        var startBtn = document.createElement('button');
+        var controlsBtn = document.createElement('button');
+        var quitBtn = document.createElement('button');
+
+        // move this to another func
+        //var div = document.getElementById('points');
+        //div.innerText = '';
+        // till this
+
+        startBtn.innerText = 'Start Game';
+        controlsBtn.innerText = 'Controls';
+        quitBtn.innerText = 'Quit Game';
+
+        frag.appendChild(startBtn);
+        frag.appendChild(controlsBtn);
+        frag.appendChild(quitBtn);
+
+
+
+        var divButtons = document.getElementById('btn-container');
+        divButtons.appendChild(frag);
+
+
+        startBtn.addEventListener('click', function () {
+            startBtn.parentNode.removeChild(startBtn);
+            controlsBtn.parentNode.removeChild(controlsBtn);
+            // Quit Button should not be removed!!!!!!!!
+            quitBtn.parentNode.removeChild(quitBtn);
 
             Game();
         })
@@ -69,7 +94,11 @@
                 updateObstacleCarY += 0.005;
             }
 
-            pointsDiv.innerHTML = playerPoints;
+            if (!isGameOver) {
+                pointsDiv.innerText = "Points: " + playerPoints;
+            } else {
+                pointsDiv.innerText = ' ';
+            }
 
             if (!isGameOver) {
                 requestAnimationFrame(drawingObjects);
@@ -159,15 +188,16 @@
                 if ((obstacleCars[i].backBumperY > myCar.frontBumperY) && (obstacleCars[i].frontBumperY + 10 < myCar.backBumperY)) {
                     if (obstacleCars[i].line == myCar.line) {
                         isGameOver = true;
-                        printResults();
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
                         alert("Game Over! Points: " + playerPoints);
+                        printResults();
                     }
                 }
             }
         }
 
         function printResults() {
-            //TODO
+            StartMenu();
         }
 
         document.onkeydown = checkKey;
