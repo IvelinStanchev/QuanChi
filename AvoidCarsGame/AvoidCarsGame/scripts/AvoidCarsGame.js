@@ -1,30 +1,42 @@
 ﻿window.onload = function () {
+    var frag;
+    var startBtn;
+    var controlsBtn;
+    var quitBtn;
+    var controls;
+    var divButtons;
+    var isBtnsDraw = false;
 
-    function StartMenu(){
+    function StartMenu() {
 
-        var frag = document.createDocumentFragment();
-        var startBtn = document.createElement('button');
-        var controlsBtn = document.createElement('button');
-        var quitBtn = document.createElement('button');
-        var controls;
-        
-        startBtn.innerText = 'Start Game';
-        controlsBtn.innerText = 'Controls';
-        quitBtn.innerText = 'Quit Game';
+        if (isBtnsDraw===false) {
+             frag = document.createDocumentFragment();
+             startBtn = document.createElement('button');
+             controlsBtn = document.createElement('button');
+             quitBtn = document.createElement('button');
+             startBtn.innerText = 'Start Game';
+             controlsBtn.innerText = 'Controls';
+             quitBtn.innerText = 'Quit Game';
 
-        frag.appendChild(startBtn);
-        frag.appendChild(controlsBtn);
-        frag.appendChild(quitBtn);
+             frag.appendChild(startBtn);
+             frag.appendChild(controlsBtn);
+             frag.appendChild(quitBtn);
 
-        var divButtons = document.getElementById('btn-container');
-        divButtons.appendChild(frag);
+             divButtons = document.getElementById('btn-container');
+             divButtons.appendChild(frag);
+             isBtnsDraw = true;
+        }
+        else {
+            startBtn.style.visibility = 'visible';
+            controlsBtn.style.visibility = 'visible';
+            quitBtn.style.visibility = 'visible';
 
-
+        }
+               
         startBtn.addEventListener('click', function () {
-            startBtn.parentNode.removeChild(startBtn);
-            controlsBtn.parentNode.removeChild(controlsBtn);
-            // Quit Button should not be removed!!!!!!!!
-            quitBtn.parentNode.removeChild(quitBtn);
+            startBtn.style.visibility = 'hidden';
+            controlsBtn.style.visibility = 'hidden';
+            quitBtn.style.visibility = 'hidden';
 
             Game();
         })
@@ -36,7 +48,8 @@
         })
 
         controlsBtn.addEventListener('mouseout', function () {
-            controls.parentNode.removeChild(controls);
+                controls.parentNode.removeChild(controls);
+          
         })
     }
 
