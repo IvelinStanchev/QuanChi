@@ -67,7 +67,7 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="scripts\AvoidCarsGame.js" />
-    <Content Include="style.css" />
+    <Content Include="styles\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
