@@ -1,14 +1,14 @@
 ﻿window.onload = function () {
     var canvas = document.getElementById("field");
     var ctx = canvas.getContext("2d");
-    
+
     var pointsDiv = document.getElementById("points");
 
     var myCarImage = new Image();
     myCarImage.src = 'images/car.png';
     var obstacleCarImage = new Image();
     obstacleCarImage.src = 'images/obstacleCar.png';
-    
+
     var directions = {
         "left": -175,
         "right": 175,
@@ -20,6 +20,7 @@
     var fieldMinPositionX = 350;
     var fieldMaxPositionX = 850;
     var centerPosition = ((fieldMaxPositionX + fieldMinPositionX) / 2) - 35;
+    // no usage for fieldPositionY
     var fieldPositionY = canvas.height;
     var mainCarDirection = "center";
     var playerPoints = 0;
@@ -68,7 +69,7 @@
             ctx.drawImage(this.image, this.x, this.y);
             this.backBumperY = this.y + 128;
             this.frontBumperY = this.y;
-        }
+        };
     }
 
     function MainCar(x, y, image) {
@@ -87,7 +88,7 @@
                 ctx.drawImage(this.image, newPosition, this.y);
                 this.line = mainCarDirection;
             }
-        }
+        };
     }
 
     function drawObstacleCars(updateObstacleCarY) {
@@ -109,7 +110,7 @@
         var isNeeded = true;
 
         for (var i = 0, len = obstacleCars.length; i < len; i++) {
-            if (obstacleCars[i].y < (canvas.height / 2)){
+            if (obstacleCars[i].y < (canvas.height / 2)) {
                 isNeeded = false;
             }
         }
@@ -120,11 +121,9 @@
 
             if (generatedRandomValue === 0) {
                 direction = "left";
-            }
-            else if (generatedRandomValue === 1) {
+            } else if (generatedRandomValue === 1) {
                 direction = "right";
-            }
-            else {
+            } else {
                 direction = "center";
             }
 
@@ -138,7 +137,7 @@
     function checkForCollision() {
         for (var i = 0, len = obstacleCars.length; i < len; i++) {
             if ((obstacleCars[i].backBumperY > myCar.frontBumperY) && (obstacleCars[i].frontBumperY + 10 < myCar.backBumperY)) {
-                if (obstacleCars[i].line == myCar.line) {
+                if (obstacleCars[i].line === myCar.line) {
                     alert("Game Over! Points: " + playerPoints);
                 }
             }
@@ -149,29 +148,27 @@
     function checkKey(e) {
         e = e || window.event;
 
-        if (e.keyCode == '40') {
+        if (e.keyCode === '40') {
             //brake
             if (updateObstacleCarY > 1) {
                 updateObstacleCarY -= 0.5;
             }
-            
+
             if (playerPoints >= 15) {
                 playerPoints -= 15;
             }
-        }
-        else if (e.keyCode == '39') {
-            if (mainCarDirection == "center") {
+        } else if (e.keyCode === '39') {
+            if (mainCarDirection === "center") {
                 mainCarDirection = 'right';
             }
-            if (mainCarDirection == "left") {
+            if (mainCarDirection === "left") {
                 mainCarDirection = 'center';
             }
-        }
-        else if (e.keyCode == '37') {
-            if (mainCarDirection == "center") {
+        } else if (e.keyCode === '37') {
+            if (mainCarDirection === "center") {
                 mainCarDirection = 'left';
             }
-            if (mainCarDirection == "right") {
+            if (mainCarDirection === "right") {
                 mainCarDirection = 'center';
             }
         }
@@ -180,4 +177,4 @@
     function generateRandomNumberFrom0To2() {
         return (Math.random()) * 3 | 0;
     }
-}
+};
