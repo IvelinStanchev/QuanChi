@@ -27,6 +27,31 @@
             divButtons = document.getElementById('btn-container');
             divButtons.appendChild(frag);
             isBtnsDraw = true;
+
+            startBtn.addEventListener('click', function () {
+                startBtn.style.visibility = 'hidden';
+                controlsBtn.style.visibility = 'hidden';
+                isGameOver = false;
+                Game();
+            });
+
+            var controlsWords = document.getElementById('controls-explained');
+            controlsWords.style.visibility = 'hidden';
+            controlsBtn.addEventListener('click', function () {
+                if (controlsWords.style.visibility === 'hidden') {
+                    controlsWords.style.visibility = 'visible';
+                }
+                else if (controlsWords.style.visibility === 'visible') {
+                    controlsWords.style.visibility = 'hidden';
+                }
+            });
+
+
+            quitBtn.addEventListener('click', function () {
+                isGameOver = true;
+                alert("Player Points:" + playerPoints);
+                StartMenu();
+            })
         }
         else {
             startBtn.style.visibility = 'visible';
@@ -34,30 +59,7 @@
 
         }
 
-        startBtn.addEventListener('click', function () {
-            startBtn.style.visibility = 'hidden';
-            controlsBtn.style.visibility = 'hidden';
-            isGameOver = false;
-            Game();
-        });
-
-        var controlsWords = document.getElementById('controls-explained');
-        controlsWords.style.visibility = 'hidden';
-        controlsBtn.addEventListener('click', function () {
-            if(controlsWords.style.visibility === 'hidden'){
-                controlsWords.style.visibility = 'visible';
-            }
-            else if(controlsWords.style.visibility === 'visible'){
-                controlsWords.style.visibility = 'hidden';
-            }
-        });
         
-
-        quitBtn.addEventListener('click', function () {
-            isGameOver = true;
-            alert("Player Points:" + playerPoints);
-            StartMenu();
-        })
     }
 
     StartMenu();
