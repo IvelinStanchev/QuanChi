@@ -151,6 +151,7 @@
             this.frontLeftBumperX = 570;
             this.frontRightBumperX = 620;
             this.currentPosition = x;
+            this.previousPosition = x;
             this.line = startDirection;
             this.draw = function (direction) {
                 //console.log(this.line + " line");
@@ -166,12 +167,16 @@
                     }
                     else {
                         ctx.drawImage(this.image, this.currentPosition, this.y);
+                        this.previousPosition = this.currentPosition;
                     }
                 }
 
+                if (this.currentPosition === this.previousPosition + 50 || this.currentPosition === this.previousPosition - 50) {
+                    this.line = "none";
+                }
                 if (this.currentPosition === newPosition + 50 || this.currentPosition === newPosition - 50) {
                     this.line = direction;
-                }
+                }             
             }
         }
 
