@@ -85,8 +85,6 @@
         var fieldPositionY = canvas.height;
         var mainCarDirection = "center";
         
-
-
         var myCar = new MainCar(centerPosition, canvas.height - 140, myCarImage, mainCarDirection);
         var obstacleCar = new ObstacleCar(centerPosition, minCanvasHeight - 128, obstacleCarImage, "center");
 
@@ -144,7 +142,7 @@
             }
         }
 
-        function MainCar(x, y, image) {
+        function MainCar(x, y, image, startDirection) {
             this.x = x;
             this.y = y;
             this.image = image;
@@ -152,13 +150,27 @@
             this.backBumperY = this.y + 128;
             this.frontLeftBumperX = 570;
             this.frontRightBumperX = 620;
-
+            this.currentPosition = x;
+            this.line = startDirection;
             this.draw = function (direction) {
+                //console.log(this.line + " line");
                 var newPosition = this.x + directions[direction];
-
                 if (!(newPosition > fieldMaxPositionX) && !(newPosition < fieldMinPositionX)) {
-                    ctx.drawImage(this.image, newPosition, this.y);
-                    this.line = mainCarDirection;
+                    if (this.currentPosition > newPosition) {
+                        this.currentPosition -= 5;
+                        ctx.drawImage(this.image, this.currentPosition, this.y);
+                    }
+                    else if (this.currentPosition < newPosition) {
+                        this.currentPosition += 5;
+                        ctx.drawImage(this.image, this.currentPosition, this.y);
+                    }
+                    else {
+                        ctx.drawImage(this.image, this.currentPosition, this.y);
+                    }
+                }
+
+                if (this.currentPosition === newPosition + 50 || this.currentPosition === newPosition - 50) {
+                    this.line = direction;
                 }
             }
         }
