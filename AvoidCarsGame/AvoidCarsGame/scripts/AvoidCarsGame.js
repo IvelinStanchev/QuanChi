@@ -46,7 +46,6 @@
                 }
             });
 
-
             quitBtn.addEventListener('click', function () {
                 isGameOver = true;
                 alert("Player Points:" + playerPoints);
@@ -56,10 +55,7 @@
         else {
             startBtn.style.visibility = 'visible';
             controlsBtn.style.visibility = 'visible';
-
         }
-
-        
     }
 
     StartMenu();
@@ -227,7 +223,7 @@
 
         function printResults() {
             var now = new Date();
-            now.toUTCString()
+            now.toUTCString();
             var name = prompt("Enter name","your name");
 
             var score = {
@@ -235,7 +231,7 @@
                 'name'  : name,
                 'points' : playerPoints
 
-            }
+            };
 
             sessionStorage.setItem('score', JSON.stringify(score));
             StartMenu();
@@ -271,6 +267,10 @@
                 if (mainCarDirection == "right") {
                     mainCarDirection = 'center';
                 }
+            }
+            else if (e.keyCode == '8') {
+                //end game
+                quitBtn.click();
             }
         }
 
