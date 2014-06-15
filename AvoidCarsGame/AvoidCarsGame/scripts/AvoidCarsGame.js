@@ -39,18 +39,19 @@
             controlsBtn.style.visibility = 'hidden';
             isGameOver = false;
             Game();
-        })
+        });
 
+        var controlsWords = document.getElementById('controls-explained');
+        controlsWords.style.visibility = 'hidden';
         controlsBtn.addEventListener('click', function () {
-            controls = document.createElement('div');
-            controls.innerText = 'Left arrow - move car to the left\n Right arrow - move car to the right';
-            divButtons.appendChild(controls);
-        })
-        //Clear the controls message, but doesn't work well
-        controlsBtn.addEventListener('mouseout', function () {
-            controls.parentNode.removeChild(controls);
-
-        })
+            if(controlsWords.style.visibility === 'hidden'){
+                controlsWords.style.visibility = 'visible';
+            }
+            else if(controlsWords.style.visibility === 'visible'){
+                controlsWords.style.visibility = 'hidden';
+            }
+        });
+        
 
         quitBtn.addEventListener('click', function () {
             isGameOver = true;
