@@ -226,6 +226,18 @@
         }
 
         function printResults() {
+            var now = new Date();
+            now.toUTCString()
+            var name = prompt("Enter name","your name");
+
+            var score = {
+                'dateTime' : now,
+                'name'  : name,
+                'points' : playerPoints
+
+            }
+
+            sessionStorage.setItem('score', JSON.stringify(score));
             StartMenu();
         }
 
